@@ -17,7 +17,7 @@ func DodajOceno(studenti map[string]Student, vpisnaStevilka string, ocena int, m
 
 	e, ok := studenti[vpisnaStevilka]
 	if ok {
-		e.ocene = append(e.ocene, ocena)
+		e.Ocene = append(e.Ocene, ocena)
 		studenti[vpisnaStevilka] = e
 	} else {
 		fmt.Println("Studenta ni v seznamu")
@@ -28,19 +28,19 @@ func DodajOceno(studenti map[string]Student, vpisnaStevilka string, ocena int, m
 func povprecje(studenti map[string]Student, vpisnaStevilka string, stOcen int) float64 {
 	e, ok := studenti[vpisnaStevilka]
 	if !ok {return -1}
-	if len(e.ocene) < stOcen {return 0.0}
+	if len(e.Ocene) < stOcen {return 0.0}
 	var povprecje int
-	for _, v := range e.ocene {
+	for _, v := range e.Ocene {
 		povprecje = povprecje + v
 	}
 
-	return (float64(povprecje) / float64(len(e.ocene)))
+	return (float64(povprecje) / float64(len(e.Ocene)))
 }
 
 func IzpisVsehOcen(studenti map[string]Student) {
 	fmt.Println("REDOVALNICA:")
 	for i, v := range studenti {
-		fmt.Printf("%s - %s %s: %v\n", i, v.Ime,v.Priimek, v.ocene)
+		fmt.Printf("%s - %s %s: %v\n", i, v.Ime,v.Priimek, v.Ocene)
 	}
 	return
 }
@@ -59,3 +59,4 @@ func IzpisiKoncniUspeh(studenti map[string]Student, stOcen int) {
 	}
 	return
 }
+
