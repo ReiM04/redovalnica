@@ -5,7 +5,7 @@ import (
 	"log"
     "os"
     "github.com/urfave/cli/v3"
-    "github.com\ReiM04\redovalnica\tree\main\pkg"
+    "github.com/ReiM04/redovalnica/tree/main/pkg"
 )
 
 func main() {
@@ -75,3 +75,4 @@ func run(stOcen int, minOcena int, maxOcena int) error {
 	return nil
 
 }
+
